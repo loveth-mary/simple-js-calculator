@@ -145,6 +145,7 @@
     <p>
         <button class="clear" onclick="
             clearCalculation()
+            localStorage.removeItem('calculationResult');
             "
         >
             
@@ -159,36 +160,8 @@
             Del
         </button>
     </p>
+
     
-
-    <script>
-
-        let calculation = "";
-
-        function displayCalculation() {
-            console.log(calculation);
-            document.getElementById('displayNumbers').innerHTML = calculation;
-        }
-
-        function updateCalculation(value) {
-            calculation = calculation + value;
-            displayCalculation()
-        }
-
-        function calculateResult() {
-            calculation = eval(calculation)
-            displayCalculation()
-        }
-
-        function clearCalculation() {
-            calculation = ''
-            displayCalculation()
-        }
-
-        function deleteLast() {
-            calculation = calculation.slice(0, -1)
-            displayCalculation()
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
